@@ -1,0 +1,41 @@
+// Fonts
+$Lato: "Lato", sans-serif;
+$Raleway: "Raleway", sans-serif;
+
+// Font Weights
+
+$font-weight: (
+  "regular": 400,
+  "mis600": 600,
+  "medium": 700,
+  "mis800": 800,
+  "bold": 900
+);
+
+// Colors
+$black: #000;
+$white: #fff;
+$navLinkColor-lightBlue: #43abf0;
+$hero-lightBlue: #3e9cdc;
+$logoColor-lightBLue: #42a9ed;
+$headerBackground-lightBlack: rgba(16, 16, 29, 0.9);
+$buttonTextColor: #2a2b30;
+$buttonBorderColor: #6f6d7b;
+$darkBackground: #272733;
+
+// Hamburger
+
+$hamburger-padding-x: 15px !default;
+$hamburger-padding-y: 15px !default;
+$hamburger-layer-width: 25px !default;
+$hamburger-layer-height: 3px !default;
+$hamburger-layer-spacing: 6px !default;
+$hamburger-layer-color: $navLinkColor-lightBlue !default;
+$hamburger-layer-border-radius: 4px !default;
+$hamburger-hover-opacity: 0.7 !default;
+$hamburger-active-layer-color: $hamburger-layer-color !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+$hamburger-hover-use-filter: false !default;
+$hamburger-hover-filter: opacity(50%) !default;
+$hamburger-active-hover-filter: $hamburger-hover-filter !default;
+$hamburger-types: spin;

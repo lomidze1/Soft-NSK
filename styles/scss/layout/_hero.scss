@@ -1,0 +1,240 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../components/buttons" as *;
+
+.hero {
+  position: relative;
+
+  &__background {
+    overflow: hidden;
+    aspect-ratio: 2.259;
+    z-index: 9;
+
+    & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero__content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 9;
+      gap: 3rem;
+      width: max-content;
+
+      .hero__title {
+        max-width: 48.75rem;
+
+        h1 {
+          font-size: calc(1.5rem + 1vw);
+
+          font-style: normal;
+          font-weight: map-get($font-weight, medium);
+          line-height: normal;
+          text-transform: uppercase;
+          color: #000;
+
+          span {
+            color: $hero-lightBlue;
+          }
+        }
+      }
+
+      .hero__subtitle {
+        h2 {
+          color: $black;
+          font-size: calc(1rem + 1vw);
+          font-style: normal;
+          line-height: normal;
+          font-weight: map-get($font-weight, medium);
+          margin-bottom: 0.63rem;
+        }
+
+        .hero__list {
+          .hero__list-item {
+            display: flex;
+            align-items: center;
+            color: $black;
+            font-family: $Lato;
+
+            font-size: calc(0.7rem + 1vw);
+            font-weight: map-get($font-weight, regular);
+            line-height: normal;
+            gap: 0.69rem;
+
+            span {
+              display: flex;
+              width: 0.30875rem;
+              height: 0.09438rem;
+              background: $black;
+            }
+          }
+        }
+      }
+
+      .hero__buttons {
+        display: flex;
+        gap: 1.88rem;
+
+        .button__order {
+          @include orderButton;
+        }
+
+        .button__details {
+          @include detailsButton;
+        }
+      }
+    }
+  }
+}
+
+// min-width: 1920 px 120rem
+@include media-large-desktop {
+  .hero {
+    .hero__content {
+      margin: 12.69rem auto 12.69rem 23.44rem;
+      gap: 5rem;
+
+      .hero__title {
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      .hero__subtitle {
+        h2 {
+          font-size: 1.25rem;
+        }
+
+        .hero__list {
+          .hero__list-item {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// max-width: 1919 px 119.937rem
+@include media-desktop {
+  .hero {
+    &__background {
+      justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      padding-left: 10%;
+    }
+  }
+}
+
+// max-width: 1440 px 90rem
+@include media-large-laptop {
+  .hero {
+    &__background {
+      aspect-ratio: 1.1;
+
+      & > img {
+        object-position: right;
+      }
+
+      .hero__content {
+        max-width: 90%;
+        gap: 2rem;
+
+        .hero__title {
+          max-width: 80%;
+
+          h1 {
+            font-size: calc(1rem + 1vw);
+          }
+        }
+      }
+    }
+  }
+}
+
+// max-width: 1024 px 64rem
+@include media-laptop {
+  .hero {
+    &__background {
+      aspect-ratio: 1.2;
+      justify-content: center;
+      align-items: end;
+      padding-left: 0;
+      padding-bottom: 1.5rem;
+
+      & > img {
+        object-position: right;
+      }
+
+      .hero__content {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 1rem 0 1rem 0;
+        max-width: 90%;
+        padding: 0.9rem;
+        gap: 1.5rem;
+
+        .hero__title {
+          max-width: 100%;
+        }
+
+        .hero__buttons {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+// max-width: 768 px 48rem
+@include media-tablet {
+  .hero {
+    &__background {
+      aspect-ratio: 1.1;
+    }
+  }
+}
+
+// max-width: 576 px 36rem
+@include media-smartphone {
+  .hero {
+    &__background {
+      width: 100%;
+      max-height: 100svh;
+      aspect-ratio: 9/19.5;
+      padding-left: 0;
+      padding-bottom: 0.5rem;
+
+      & > img {
+        object-position: 84% 0px;
+      }
+
+      .hero__content {
+        margin-left: auto;
+        margin-right: auto;
+
+        .hero__title {
+          h1 {
+            font-size: calc(1.1rem + 1vw);
+          }
+        }
+
+        .hero__subtitle {
+          h2 {
+            font-size: calc(0.9rem + 1vw);
+          }
+        }
+      }
+    }
+  }
+}
+
+// max-width: 320 px 20rem
+@include media-mobile {
+}

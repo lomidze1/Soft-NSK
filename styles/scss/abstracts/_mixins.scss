@@ -1,0 +1,99 @@
+// Media Screen
+
+// max-width: 320 px
+@mixin media-mobile {
+  @media screen and (max-width: 20rem) {
+    @content;
+  }
+}
+
+// max-width: 576 px
+@mixin media-smartphone {
+  @media screen and (max-width: 36rem) {
+    @content;
+  }
+}
+
+// max-width: 768 px
+@mixin media-tablet {
+  @media screen and (max-width: 48rem) {
+    @content;
+  }
+}
+
+// max-width: 1024 px
+@mixin media-laptop {
+  @media screen and (max-width: 64rem) {
+    @content;
+  }
+}
+
+// max-width: 1440 px
+@mixin media-large-laptop {
+  @media screen and (max-width: 90rem) {
+    @content;
+  }
+}
+
+// max-width: 1920 px
+@mixin media-desktop {
+  @media screen and (max-width: 119.9375rem) {
+    @content;
+  }
+}
+
+// min-width: 1920 px
+@mixin media-large-desktop {
+  @media screen and (min-width: 120rem) {
+    @content;
+  }
+}
+
+// min-width: 1920 px 120rem
+@include media-large-desktop {
+}
+
+// max-width: 1920 px 120rem
+@include media-desktop {
+}
+
+// max-width: 1440 px 90rem
+@include media-large-laptop {
+}
+
+// max-width: 1024 px 64rem
+@include media-laptop {
+}
+
+// max-width: 768 px 48rem
+@include media-tablet {
+}
+
+// max-width: 576 px 36rem
+@include media-smartphone {
+}
+
+// max-width: 320 px 20rem
+@include media-mobile {
+}
+
+// Mixins
+
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin normalText {
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+}

@@ -1,0 +1,164 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../components/buttons" as *;
+
+.footer {
+  @include flexCenter(row);
+  height: 5rem;
+  background: #3d4050;
+
+  .footer__title {
+    h2 {
+      @include normalText;
+      color: #fff;
+      font-family: $Lato;
+      font-size: 0.8125rem;
+      font-weight: map-get($font-weight, regular);
+      margin-right: 2.52rem;
+    }
+  }
+
+  .footer__payment {
+    padding: 0 2.66rem 0 2.53rem;
+    border-right: 0.0625rem solid #c3c3c3;
+    border-left: 0.0625rem solid #c3c3c3;
+
+    .footer__payment-services {
+      display: flex;
+      gap: 2.37rem;
+
+      .footer__payment-company {
+        @include normalText;
+        font-weight: map-get($font-weight, regular);
+        color: #c3c3c3;
+        font-family: $Lato;
+        font-size: 0.8125rem;
+        display: flex;
+        gap: 0.62rem;
+        align-items: center;
+
+        & > span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .footer__social {
+    .footer__social-networks {
+      display: flex;
+      margin-left: 2.21rem;
+      gap: 2.37rem;
+
+      .footer__social-network {
+        color: #fff;
+        font-family: $Lato;
+        font-size: 0.8125rem;
+        @include normalText;
+        font-weight: map-get($font-weight, regular);
+        display: flex;
+        cursor: pointer;
+
+        & > a {
+          display: flex;
+          justify-items: center;
+          gap: 0.62rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #43abf0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// min-width: 1920 px 120rem
+@include media-large-desktop {
+}
+
+// max-width: 1920 px 120rem
+@include media-desktop {
+}
+
+// max-width: 1440 px 90rem
+@include media-large-laptop {
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+// max-width: 1024 px 64rem
+@include media-laptop {
+}
+
+// max-width: 768 px 48rem
+@include media-tablet {
+  .footer {
+    .footer__title {
+      h2 {
+        font-size: calc(0.7rem + 1vw);
+      }
+    }
+
+    .footer__payment {
+      .footer__payment-services {
+        .footer__payment-company {
+          font-size: calc(0.7rem + 1vw);
+        }
+      }
+    }
+
+    .footer__social {
+      .footer__social-networks {
+        .footer__social-network {
+          font-size: calc(0.7rem + 1vw);
+        }
+      }
+    }
+  }
+}
+
+// max-width: 576 px 36rem
+@include media-smartphone {
+  .footer {
+    gap: 2rem;
+    padding-left: 2rem;
+    align-items: start;
+    padding-bottom: 3rem;
+
+    .footer__title {
+      h2 {
+        text-align: center;
+        margin-right: 0;
+        font-size: calc(0.7rem + 1vw);
+      }
+    }
+
+    .footer__payment {
+      border: none;
+      padding: 0;
+
+      .footer__payment-services {
+        flex-direction: column;
+      }
+    }
+
+    .footer__social {
+      .footer__social-networks {
+        flex-direction: column;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// max-width: 320 px 20rem
+@include media-mobile {
+}

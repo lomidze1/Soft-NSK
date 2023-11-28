@@ -1,0 +1,94 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+@mixin commonButton {
+  @include flexcenter;
+  width: 11.4375rem;
+  height: 2.6875rem;
+  line-height: normal;
+  text-transform: uppercase;
+  font-weight: map-get($font-weight, regular);
+  font-style: normal;
+  font-size: 0.8125rem;
+  text-align: center;
+  font-family: $Lato;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: 0.7s;
+}
+
+@mixin orderButton {
+  background: $hero-lightBlue;
+  color: $white;
+}
+
+@mixin detailsButton {
+  background: $white;
+  color: $buttonTextColor;
+}
+
+@mixin button($url, $x1, $y1) {
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+}
+
+.hero__button-container {
+  @include commonButton;
+  position: relative;
+  overflow: hidden;
+  transition: 0.7s;
+  border: 1px solid white;
+
+  button {
+    @include commonButton;
+    @include button(
+      "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+      2300%,
+      100%
+    );
+    transition: 0.7s;
+
+    animation: ani2 0.7s steps(22) forwards;
+
+    &:hover {
+      animation: ani 0.7s steps(22) forwards;
+    }
+  }
+}
+
+.hero__button-container-2 {
+  border: 1px solid $buttonBorderColor;
+}
+
+.mask {
+  @include commonButton;
+  position: absolute;
+  overflow: hidden;
+  transition: 0.7s;
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}

@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+
+ul,
+ol,
+li,
+a,
+button,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $Lato;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+::selection {
+  background-color: #272733; 
+  color: #3E9CDC;
+}
