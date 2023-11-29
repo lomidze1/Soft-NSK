@@ -1,19 +1,19 @@
 // Hamburger Mobile Menu
 
 document.addEventListener('DOMContentLoaded', function () {
-  // const navLinks = document.querySelectorAll('.nav__link');
+  const navLinks = document.querySelectorAll('.nav__link');
   const mobileMenu = document.querySelector('.nav__list');
   const hamburgers = document.querySelectorAll('.hamburger');
 
-  // navLinks.forEach((link) => {
-  //   link.addEventListener('click', function () {
-  //     closeMobileMenu();
-  //     navLinks.forEach((link) => {
-  //       link.classList.remove('nav__link--is-active');
-  //     });
-  //     this.classList.add('nav__link--is-active');
-  //   });
-  // });
+  navLinks.forEach((link) => {
+    link.addEventListener('click', function () {
+      closeMobileMenu();
+      navLinks.forEach((link) => {
+        link.classList.remove('nav__link--is-active');
+      });
+      this.classList.add('nav__link--is-active');
+    });
+  });
 
   if (hamburgers.length > 0) {
     hamburgers.forEach((hamburger) => {
